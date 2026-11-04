@@ -1023,3 +1023,70 @@ button {
     }
 
 }
+
+
+/* =========================================
+   14. ANIMACIONES AL HACER SCROLL
+========================================= */
+
+/* Estado inicial */
+
+body.js-enabled .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Estado visible */
+
+body.js-enabled .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación para elementos con retraso */
+
+.reveal.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.reveal.delay-2 {
+    transition-delay: 0.30s;
+}
+
+.reveal.delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    body.js-enabled .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* EFECTO DE ESCRITURA */
+.typing-text {
+    color: var(--primary-light);
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--primary-light);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
